@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class YourInformationPage extends BasePage{
-
     @FindBy(id = "first-name")
     public WebElement firstNameBox;
 

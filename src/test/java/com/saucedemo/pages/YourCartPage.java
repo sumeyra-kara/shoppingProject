@@ -9,5 +9,4 @@ public class YourCartPage extends BasePage{
     @FindBy(id = "checkout")
     public WebElement checkoutBox;
 
-
 }
