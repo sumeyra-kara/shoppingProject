@@ -14,14 +14,11 @@ public class ProductPage extends BasePage {
         WebElement dropDownMenu = Driver.get().findElement(By.xpath("//select[@class='product_sort_container']"));
         Select select = new Select(dropDownMenu);
         select.selectByVisibleText("Price (high to low)");
-
     }
 
     public void verifyProductName (String name){
         WebElement product = Driver.get().findElement(By.xpath("//div[text()='"+name+"']"));
-        String expectedName = name;
-        String actualName=product.getText();
-        Assert.assertEquals(actualName,expectedName);
+        Assert.assertEquals(product.getText(),name);
     }
 
     public void addtoCartWithName(String name){
@@ -30,15 +27,12 @@ public class ProductPage extends BasePage {
         Driver.get().findElement(By.id("add-to-cart")).click();
         Driver.get().navigate().back();
         productCounter++;
-
     }
 
     public void verifyTrueNumberOfProduct(int productSayisi){
         WebElement productNumber = Driver.get().findElement(By.xpath("//span[text()='"+productSayisi+"']"));
-        String actualText = productNumber.getText();
         String expectedText= String.valueOf(productSayisi);
-        Assert.assertEquals(actualText,expectedText);
-
+        Assert.assertEquals(productNumber.getText(),expectedText);
     }
 
 

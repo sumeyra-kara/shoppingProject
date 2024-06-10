@@ -11,9 +11,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-    private Driver(){} // baska classlardan obje olusturulmasin diye
-    private static WebDriver driver; // classname ile cagirmam icin static yapiyoruz
-    // encapsülation kullanmak istedigimden private oluyor
+    private Driver(){}
+    private static WebDriver driver;
 
     public static WebDriver get(){
         if (driver==null){
@@ -59,7 +58,7 @@ public class Driver {
     }
     public static void closeDriver(){
         if (driver!=null){
-            //driver.quit();
+            driver.quit();
             driver=null;
         }
     }
